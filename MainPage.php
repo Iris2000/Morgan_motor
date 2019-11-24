@@ -2,7 +2,7 @@
 <html lang="en">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-    .navi {
+    /* .navi {
       background-image: url('images/machine-macro-background-morgan-wallpaper-preview.jpg');
       background-size: cover;
       text-align: center;
@@ -12,7 +12,7 @@
     }
     .center{
       text-align: center;
-    }
+    } */
     * {
       box-sizing:border-box;
     }
@@ -83,14 +83,14 @@
     <title>Morgan Motor</title>
   </head>
   <body>
-    <form action="result.php" method="post">
+    <!-- <form action="resultTest.php" method="post">
       <div class='navi'>
         <img src="images/morgan_logo.png" alt="Morgan_Motor_Logo" style=" display: block;margin-left: auto;margin-right: auto;height:100px;">
         <div class='center'><input type="text" name="submit-search" style="border-radius: 5px; width: 300px; height: 30px;">&nbsp<input type="submit" value="Go" style="border-radius: 5px;"></div>
       </div>
       <br>
-      <br>
-
+      <br> -->
+    <?php include 'header(new).php'; ?>
       <!-- Plus 6-->
       <div class="container" style="background:#a60e0e;">
         <div class="row">
