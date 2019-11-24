@@ -83,10 +83,10 @@
     <title>Morgan Motor</title>
   </head>
   <body>
-    <form action="search.php" method="get">
+    <form action="result.php" method="get">
       <div class='navi'>
         <img src="images/morgan_logo.png" alt="Morgan_Motor_Logo" style=" display: block;margin-left: auto;margin-right: auto;height:100px;">
-        <div class='center'><input type="text" name="search" style="border-radius: 5px; width: 300px; height: 30px;">&nbsp<input type="submit" value="Go" style="border-radius: 5px;"></div>
+        <div class='center'><input type="text" name="submit-search" style="border-radius: 5px; width: 300px; height: 30px;">&nbsp<input type="submit" value="Go" style="border-radius: 5px;"></div>
       </div>
       <br>
       <br>
