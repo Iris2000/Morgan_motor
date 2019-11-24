@@ -6,11 +6,36 @@
     include 'DB.php';
 ?>
 <style>
-h2{
-  font-size: 40px;
-  font-weight: 300;
-  text-transform: uppercase;
-}
+    h2{
+      font-size: 40px;
+      font-weight: 300;
+      text-transform: uppercase;
+      font-family: cursive;
+      color: #ffffff;
+    }
+    h3{
+      font-size: 15px;
+      font-weight: bold;
+      font-style: oblique;
+      color: #ffffff;
+    }
+    h4{
+      font-size: 15px;
+      font-weight: normal;
+      font-style: oblique;
+      color: #ffffff;
+    }
+    p{
+      font-size: 12px;
+      font-weight: normal;
+      font-style: oblique;
+      color: #ffffff;
+    }
+    body {
+      margin: 0;
+      line-height: 1;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 </style>
 <body>
 <div class="result">
@@ -61,15 +86,62 @@ h2{
           $x--;
         }
         $count=count($results);
+        $j=1;
 ?>
 </div>
-<p style="text-align: left; font-size: 20px;">RESULTS: <?php echo $count; ?> </p>
-<?php foreach ($results as $result): ?>
-<div class="column" style="background-color:#aaa;">
-    <h2><?php echo $result['Name'];?></h2>
-    <p><?php echo $result['Description'] ?></p>
+<div style="background-color: #fafafa;">
+  <br><br>
+  <p style="text-align: left; font-size: 20px; color: black;">RESULTS: <?php echo $count;?> </p>
+  <?php foreach ($results as $result): ?>
+    <?php if ($result['Cars_ID']==1): ?>
+      <?php $img="3wheel.jpg"; ?>
+    <?php endif; ?>
+    <?php if ($result['Cars_ID']==2): ?>
+      <?php $img="44.jpg"; ?>
+    <?php endif; ?>
+    <?php if ($result['Cars_ID']==3): ?>
+      <?php $img="plus4.jpg"; ?>
+    <?php endif; ?>
+    <?php if ($result['Cars_ID']==4): ?>
+      <?php $img="plus6.jpg"; ?>
+    <?php endif; ?>
+    <?php if ($result['Cars_ID']==5): ?>
+      <?php $img="roadster.jpg"; ?>
+    <?php endif; ?>
+    <?php if ($j%2==0): ?>
+      <div class="column" style="background-color:#704038; padding: 10px;">
+        <img src="images\<?php echo $img ?>" style="float:right;width: 650px;">
+        <h2><?php echo $result['Name'];?></h2>
+        <h3>Power</h3>
+        <p><?php echo $result['Powers']?></p>
+        <h3>Top Speed</h3>
+        <p><?php echo $result['Top_Speed']?></p>
+        <h3>0 - 100 km/h (0 - 62 mph)</h3>
+        <p><?php echo $result['kmh']?></p>
+        <h3>Combined CO2</h3>
+        <p><?php echo $result['Combine_CO2']?></p>
+        <h4><?php echo $result['Description']?></h4>
+      </div>
+    <?php endif; ?>
+    <?php if ($j%2!=0): ?>
+      <div class="column" style="background-color:#232323; padding: 10px;">
+          <img src="images\<?php echo $img ?>" style="float:right;width: 650px;">
+          <h2><?php echo $result['Name'];?></h2>
+          <h3>Power</h3>
+          <p><?php echo $result['Powers']?></p>
+          <h3>Top Speed</h3>
+          <p><?php echo $result['Top_Speed']?></p>
+          <h3>0 - 100 km/h (0 - 62 mph)</h3>
+          <p><?php echo $result['kmh']?></p>
+          <h3>Combined CO2</h3>
+          <p><?php echo $result['Combine_CO2']?></p>
+          <h4><?php echo $result['Description']?></h4>
+      </div>
+    <?php endif; ?>
+  <br><br><br><br><br>
+  <?php $j++;?>
+  <?php endforeach; ?>
+  <br>
 </div>
-<br>
-<?php endforeach; ?>
 </body>
 </html>
