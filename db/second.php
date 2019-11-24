@@ -12,7 +12,6 @@
      $sqlCars="CREATE TABLE cars (
        Cars_ID INT NOT NULL AUTO_INCREMENT,
        Name VARCHAR(255),
-       Image LONGBLOB,
        Powers VARCHAR(50),
        Top_Speed VARCHAR(50),
        kmh VARCHAR(50),
@@ -41,7 +40,9 @@
        TopSpeed VARCHAR(50),
        CombinedMPG VARCHAR(50),
        DryWeight VARCHAR(50),
-       Price INT,
+       ListPrice DECIMAL,
+       VAT DECIMAL,
+       ListPriceIncVAT DECIMAL,
        PRIMARY KEY (Specs_ID),
        FOREIGN KEY (Cars_ID) REFERENCES cars(Cars_ID)
      );";
