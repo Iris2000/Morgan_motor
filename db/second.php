@@ -18,7 +18,7 @@
        kmh VARCHAR(50),
        Combine_CO2 VARCHAR(50),
        Description VARCHAR(300),
-       Update_Date TIMESTAMP,
+       Update_Date INT,
        PRIMARY KEY (Cars_ID)
    );";
      if (mysqli_query($conn, $sqlCars)) {
