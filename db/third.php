@@ -22,13 +22,15 @@
     ) VALUES(
       '$car0','$car1','$car2','$car3','$car4','$car5','$car6'
     );";
-  }
+
   if (mysqli_query($conn, $sqlCars)) {
     echo "Insert data Cars successfully";
   }
   else {
-    echo "Error in Insert data Cars:" . mysqli_error($conn);
+    echo "Error in Insert data Cars: " . mysqli_error($conn);
   }
+  }
+
   $Specs= array( array("EURO 3","1","S&S 1979cc V twin","Mazda 5 Speed","82 bhp @ 5250rpm","140Nm @ 3250rpm","6 seconds","115mph (185kph)","30.3 mpg (9.3 litres / 100km)","215g / km","525kg","32905","6581","39486"),
                 array("EURO 4","1","S&S 1979cc V twin","Mazda 5 Speed","68 bhp @ 5200rpm","129Nm @ 2500rpm","7 seconds","115mph (185kph)","34.9 mpg (8.1 litres / 100km)","187g / km","585kg","33395","6679","40074"),
                 array("","2","Ford Sigma 1600cc","Mazda 5 Speed","82 kw (110 bhp) @ 6000 rpm","131 Nm (97 lb/ft)","8.0 seconds","117mph (188kph)","44.1 mpg (6.4 litres / 100km)","143g / km","795kg","33505","6701","40206"),
@@ -58,13 +60,15 @@
     ) VALUES(
       '$Spec0','$Spec1','$Spec2','$Spec3','$Spec4','$Spec5','$Spec6','$Spec7','$Spec8','$Spec9','$Spec10','$Spec11','$Spec12'
     );";
-  }
+
   if (mysqli_query($conn, $sqlSpecs)) {
-    echo "<br>Insert data Specs successfully";
+    echo "Insert data Specs successfully";
   }
   else {
     echo "Error in Insert data Specs: " . mysqli_error($conn);
   }
+  }
+
 
 
 
