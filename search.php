@@ -1,1 +1,5 @@
-Searching
+<?php
+
+$connect = mysqli_connect("localhost", "root", "", "assignmentdb")
+
+?>
