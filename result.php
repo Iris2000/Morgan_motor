@@ -91,40 +91,26 @@
 </div>
 <div style="background-color: #fafafa;">
   <br><br>
-  <p style="text-align: left; font-size: 20px; color: black;">RESULTS: <?php echo $count;?> </p>
-  <?php foreach ($results as $result): ?>
-    <?php if ($result['Cars_ID']==1): ?>
-      <?php $img="3wheel.jpg"; ?>
-    <?php endif; ?>
-    <?php if ($result['Cars_ID']==2): ?>
-      <?php $img="44.jpg"; ?>
-    <?php endif; ?>
-    <?php if ($result['Cars_ID']==3): ?>
-      <?php $img="plus4.jpg"; ?>
-    <?php endif; ?>
-    <?php if ($result['Cars_ID']==4): ?>
-      <?php $img="plus6.jpg"; ?>
-    <?php endif; ?>
-    <?php if ($result['Cars_ID']==5): ?>
-      <?php $img="roadster.jpg"; ?>
-    <?php endif; ?>
-    <?php if ($j%2==0): ?>
-      <div class="column" style="background-color:#704038; padding: 10px;">
-        <img src="images\<?php echo $img ?>" style="float:right;width: 650px;">
-        <h2><?php echo $result['Name'];?></h2>
-        <h3>Power</h3>
-        <p><?php echo $result['Powers']?></p>
-        <h3>Top Speed</h3>
-        <p><?php echo $result['Top_Speed']?></p>
-        <h3>0 - 100 km/h (0 - 62 mph)</h3>
-        <p><?php echo $result['kmh']?></p>
-        <h3>Combined CO2</h3>
-        <p><?php echo $result['Combine_CO2']?></p>
-        <h4><?php echo $result['Description']?></h4>
-      </div>
-    <?php endif; ?>
-    <?php if ($j%2!=0): ?>
-      <div class="column" style="background-color:#232323; padding: 10px;">
+  <p style="text-align: left; font-size: 20px; color: black;">RESULTS related with keyword '<?php echo $keyword ?>' : <?php echo $count;?> </p>
+  <?php if ($count>0): ?>
+    <?php foreach ($results as $result): ?>
+      <?php if ($result['Cars_ID']==1): ?>
+        <?php $img="3wheel.jpg"; ?>
+      <?php endif; ?>
+      <?php if ($result['Cars_ID']==2): ?>
+        <?php $img="44.jpg"; ?>
+      <?php endif; ?>
+      <?php if ($result['Cars_ID']==3): ?>
+        <?php $img="plus4.jpg"; ?>
+      <?php endif; ?>
+      <?php if ($result['Cars_ID']==4): ?>
+        <?php $img="plus6.jpg"; ?>
+      <?php endif; ?>
+      <?php if ($result['Cars_ID']==5): ?>
+        <?php $img="roadster.jpg"; ?>
+      <?php endif; ?>
+      <?php if ($j%2==0): ?>
+        <div class="column" style="background-color:#704038; padding: 10px;">
           <img src="images\<?php echo $img ?>" style="float:right;width: 650px;">
           <h2><?php echo $result['Name'];?></h2>
           <h3>Power</h3>
@@ -136,12 +122,31 @@
           <h3>Combined CO2</h3>
           <p><?php echo $result['Combine_CO2']?></p>
           <h4><?php echo $result['Description']?></h4>
-      </div>
-    <?php endif; ?>
-  <br><br><br><br><br>
-  <?php $j++;?>
-  <?php endforeach; ?>
-  <br>
+        </div>
+      <?php endif; ?>
+      <?php if ($j%2!=0): ?>
+        <div class="column" style="background-color:#232323; padding: 10px;">
+            <img src="images\<?php echo $img ?>" style="float:right;width: 650px;">
+            <h2><?php echo $result['Name'];?></h2>
+            <h3>Power</h3>
+            <p><?php echo $result['Powers']?></p>
+            <h3>Top Speed</h3>
+            <p><?php echo $result['Top_Speed']?></p>
+            <h3>0 - 100 km/h (0 - 62 mph)</h3>
+            <p><?php echo $result['kmh']?></p>
+            <h3>Combined CO2</h3>
+            <p><?php echo $result['Combine_CO2']?></p>
+            <h4><?php echo $result['Description']?></h4>
+        </div>
+      <?php endif; ?>
+    <br><br><br><br><br>
+    <?php $j++;?>
+    <?php endforeach; ?>
+    <br>
+  <?php endif; ?>
+  <?php if ($count<=0): ?>
+      <h2 style="color:black;">No result found.. Try anothers keyword.</h2>
+  <?php endif; ?>
 </div>
 </body>
 </html>
