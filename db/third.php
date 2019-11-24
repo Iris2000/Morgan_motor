@@ -3,7 +3,7 @@
   if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
-  $cars= array( array("3 Wheeler","82 bhp @ 5250 rpm","116 mph (185 km/h)","6 seconds","270g / km","Morgans most exciting model, the 3 Wheeler is designed to bring the fun and excitement back into transport.","1574523828"),
+  $cars= array( array("3 Wheel","82 bhp @ 5250 rpm","116 mph (185 km/h)","6 seconds","270g / km","Morgans most exciting model, the 3 Wheeler is designed to bring the fun and excitement back into transport.","1574523828"),
                 array("4/4","82 kw (110 bhp) @ 6000 rpm","117 mph (188 km/h)","8 seconds","143g / km","A nimble and agile drivers’ car, the Morgan 4/4 represents the purest Morgan driving experience available.","1574576858"),
                 array("Plus 4","115 kw (154 bhp) @ 6000 rpm","118 mph (189 km/h)","7.5 seconds","205g / km","The Plus 4 represents the sweet spot within Morgan’s range, and is by far the company’s most popular model.","1574577024"),
                 array("Roadster","209 kw (280 bhp) @ 6000 rpm","140 mph (225 km/h)","5.5 seconds","250g / km","The Morgan V6 Roadster is the most powerful and exhilarating model within Morgan’s Classic Range.","1574577340"),
