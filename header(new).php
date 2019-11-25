@@ -31,6 +31,8 @@ session_start();
 
   #username {
     text-align: left;
+    position:absolute;
+    top:-10px;
     font-size: 15px;
     margin: 10px;
   }
