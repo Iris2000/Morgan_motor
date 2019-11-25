@@ -32,7 +32,7 @@ session_start();
   #username {
     text-align: left;
     position:absolute;
-    top:-10px;
+    top:46px;
     font-size: 15px;
     margin: 10px;
   }
@@ -54,7 +54,7 @@ session_start();
     <div class='navi'>
       <a href="MainPage.php"><img class='logo' src="images/Morgan.png" alt="Morgan_Motor_Logo"></a>
       <div id="username">
-        <?php echo "Welcome, ".$_SESSION["username"]; ?>
+        <?php echo "Welcome, ".$_SESSION["username"]; ?><br><br>
         <a href="logout.php"><img id="logout" src="images/logout.png" alt="Logout_Button"></a>
       </div>
       <br><br>
