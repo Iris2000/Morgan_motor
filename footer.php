@@ -18,7 +18,7 @@
 <br>
 <div class="footer">
   <a href="MainPage.php"><img src="images\morgan_logo.png" style="float:left; height:95px; cursor: pointer;"></a>
-  <form action="all.php" method="post" style=" background-color: transparent;">
+  <form action="all.php" method="post" style="background-color: transparent;">
     <br><br>
     <input type="text" name="search" placeholder="Search ..." style="border-radius: 5px; width: 200px;">&nbsp
     <button type="submit" name= "search-all" value="Go" style="border-radius: 5px; height:25px; width: 80px;">Go ..</button>

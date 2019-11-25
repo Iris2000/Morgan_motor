@@ -1,6 +1,6 @@
-<?php
+<!-- <?php
 session_start();
-?>
+?> -->
 <!doctype html>
 <html lang="en">
 <style>
@@ -31,6 +31,8 @@ session_start();
 
   #username {
     text-align: left;
+    position:absolute;
+    top:46px;
     font-size: 15px;
     margin: 10px;
   }
@@ -41,10 +43,18 @@ session_start();
 
   }
 </style>
+<!-- check Login; -->
+<?php
+  if (isset($_SESSION["username"])){
+  }
+  else{
+    header("location: login.php");
+  }
+?>
     <div class='navi'>
       <a href="MainPage.php"><img class='logo' src="images/Morgan.png" alt="Morgan_Motor_Logo"></a>
       <div id="username">
-        <?php echo "Welcome, ".$_SESSION["username"]; ?>
+        <?php echo "Welcome, ".$_SESSION["username"]; ?><br><br>
         <a href="logout.php"><img id="logout" src="images/logout.png" alt="Logout_Button"></a>
       </div>
       <br><br>

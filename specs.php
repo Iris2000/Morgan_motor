@@ -29,12 +29,16 @@
       font-size: 12px;
       font-weight: normal;
       font-style: oblique;
-      color: #ffffff;
+      color: #00ff1f;
     }
     body {
       margin: 0;
       line-height: 1;
       font-family: Arial, Helvetica, sans-serif;
+    }
+    .textformat {
+      float: left;
+      width: 25%;
     }
 </style>
 <body>
@@ -105,38 +109,56 @@
               <?php if ($result['Cars_ID']==5): ?>
                 <?php $name="Plus 6"; $img="plus6.jpg"; ?>
               <?php endif; ?>
+              <?php
+                if ($result['Type']!= null){
+                  $type=": ".$result['Type'];
+                }
+                else{
+                  $type=null;
+                }
 
+              ?>
               <?php if ($j%2==0): ?>
                 <div class="column" style="background-color:#704038; padding: 10px;">
-                  <img src="images\<?php echo $img ?>" style="float:right;width: 650px;">
-                  <h2><?php echo $name;?></h2>
-                  <h3>Engine</h3>
-                  <p><?php echo $result['Engine']?></p>
-                  <h3>Gearbox</h3>
-                  <p><?php echo $result['Gearbox']?></p>
-                  <h3>Max Power</h3>
-                  <p><?php echo $result['MaxPower']?></p>
-                  <h3>Max Torque</h3>
-                  <p><?php echo $result['MaxTorque']?></p>
-                  <h3>Performance</h3>
-                  <h4><?php echo $result['Performance']?></h4>
+                    <img src="images\<?php echo $img ?>" style="float:right;width: 650px;">
+                      <h3>Engine</h3>
+                      <p><?php echo $result['Engine']?></p>
+                      <h3>Gearbox</h3>
+                      <p><?php echo $result['Gearbox']?></p>
+                      <h3>Max Power</h3>
+                      <p><?php echo $result['MaxPower']?></p>
+                      <h3>Max Torque</h3>
+                      <p><?php echo $result['MaxTorque']?></p>
+                      <h3>Performance</h3>
+                      <p><?php echo $result['Performance']?></p>
+                      <h3>Top Speed</h3>
+                      <p><?php echo $result['TopSpeed']?></p>
+                      <h3>Combine MPG</h3><h2 style="float:right;"><?php echo $name.$type;?></h2>
+                      <p><?php echo $result['CombinedMPG']?></p>
+                      <h3>Dry Weight</h3>
+                      <p><?php echo $result['DryWeight']?></p>
                 </div>
               <?php endif; ?>
 
               <?php if ($j%2!=0): ?>
                 <div class="column" style="background-color:#232323; padding: 10px;">
                     <img src="images\<?php echo $img ?>" style="float:right;width: 650px;">
-                    <h2><?php echo $name;?></h2>
-                    <h3>Engine</h3>
-                    <p><?php echo $result['Engine']?></p>
-                    <h3>Gearbox</h3>
-                    <p><?php echo $result['Gearbox']?></p>
-                    <h3>Max Power</h3>
-                    <p><?php echo $result['MaxPower']?></p>
-                    <h3>Max Torque</h3>
-                    <p><?php echo $result['MaxTorque']?></p>
-                    <h3>Performance</h3>
-                    <h4><?php echo $result['Performance']?></h4>
+                      <h3>Engine</h3>
+                      <p><?php echo $result['Engine']?></p>
+                      <h3>Gearbox</h3>
+                      <p><?php echo $result['Gearbox']?></p>
+                      <h3>Max Power</h3>
+                      <p><?php echo $result['MaxPower']?></p>
+                      <h3>Max Torque</h3>
+                      <p><?php echo $result['MaxTorque']?></p>
+                      <h3>Performance</h3>
+                      <p><?php echo $result['Performance']?></p>
+                      <h3>Top Speed</h3>
+                      <p><?php echo $result['TopSpeed']?></p>
+                      <h3>Combine MPG</h3><h2 style="float:right;"><?php echo $name.$type;?></h2>
+                      <p><?php echo $result['CombinedMPG']?></p>
+                      <h3>Dry Weight</h3>
+                      <p><?php echo $result['DryWeight']?></p>
                 </div>
               <?php endif; ?>
 

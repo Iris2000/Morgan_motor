@@ -17,13 +17,13 @@
       font-size: 15px;
       font-weight: bold;
       font-style: oblique;
-      color: #ffffff;
+      color: #ffb500;
     }
     h4{
-      font-size: 15px;
+      font-size: 16px;
       font-weight: normal;
       font-style: oblique;
-      color: #ffffff;
+      color: #ffb500;
     }
     p{
       font-size: 12px;
