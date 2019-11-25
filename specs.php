@@ -78,7 +78,7 @@
     <div style="background-color: #fafafa;">
       <br><br>
       <p style="text-align: left; font-size: 20px; color: black;">RESULTS related with keyword '<?php echo $keyword ?>' : <?php echo $queryRows;?> </p>
-      <form action="specs.php" method="post" style="float: right; background-color: #fafafa;">
+      <form action="specs.php" method="post" style="float: right; background-color: transparent;">
         <input type="text" name="search" placeholder="<?php echo strtoupper($keyword) ?>" style="border-radius: 5px; width: 200px; height: 20px; top: 261px; right: 100px; position: absolute;">&nbsp
         <button type="submit" name= "search-specs" value="Go" style="border-radius: 5px; height:25px; width: 80px; top: 261px; right: 5px; position: absolute;">Go ..</button>
       </form>
@@ -152,3 +152,4 @@
 </div>
 </body>
 </html>
+<?php include "footer.php" ?>

@@ -13,3 +13,4 @@
     }
 </style>
 </html>
+<?php include "footer.php" ?>

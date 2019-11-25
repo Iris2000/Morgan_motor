@@ -31,14 +31,17 @@
       <div class="bar">
         <br><br>
       </div>
+      <button onclick="window.location.href = 'MainPage.php';"
+        style="background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 0px; font-size: 25px;">HOME
+      </button>
       <button onclick="window.location.href = 'cars.php';"
-        style="background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 0px; font-size: 25px;">CARS
+        style="background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 230px; font-size: 25px;">CARS
       </button>
       <button onclick="window.location.href = 'specs.php';"
-        style="background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 230px; font-size: 25px;">Specs
+        style="background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 460px; font-size: 25px;">Specs
       </button>
       <button onclick="window.location.href = 'dealership.php';"
-        style="background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 440px; font-size: 25px;">dealer
+        style="background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 690px; font-size: 25px;">dealer
       </button>
     </div>
 </html>
