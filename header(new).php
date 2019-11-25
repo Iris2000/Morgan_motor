@@ -43,6 +43,14 @@ session_start();
 
   }
 </style>
+<!-- check Login; -->
+<?php
+  if (isset($_SESSION["username"])){
+  }
+  else{
+    header("location: login.php");
+  }
+?>
     <div class='navi'>
       <a href="MainPage.php"><img class='logo' src="images/Morgan.png" alt="Morgan_Motor_Logo"></a>
       <div id="username">
