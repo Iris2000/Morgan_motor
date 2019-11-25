@@ -3,6 +3,7 @@
   if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
+
   $cars= array( array("3 Wheel","82 bhp @ 5250 rpm","116 mph (185 km/h)","6 seconds","270g / km","Morgans most exciting model, the 3 Wheeler is designed to bring the fun and excitement back into transport.","1574523828"),
                 array("4/4","82 kw (110 bhp) @ 6000 rpm","117 mph (188 km/h)","8 seconds","143g / km","A nimble and agile drivers’ car, the Morgan 4/4 represents the purest Morgan driving experience available.","1574576858"),
                 array("Plus 4","115 kw (154 bhp) @ 6000 rpm","118 mph (189 km/h)","7.5 seconds","205g / km","The Plus 4 represents the sweet spot within Morgan’s range, and is by far the company’s most popular model.","1574577024"),
@@ -69,8 +70,39 @@
   }
   }
 
+  // dealer db
+  $dealer= array( array("ABT","Morgan Basel","Abt Automobile AG","Lausenerstrasse 11", "", "4410", "Liestal", "Switzerland", "+41 (0)61 926 85 55"),
+                  array("AC Minds","Morgan Okazaki","AC Minds Morgan Okazaki","103-1 Daiwa-cho", "Okazaki-shi", "444-0931", "Aichi-ken", "Japan", "0564-32-1748"),
+                  array("Allon White","Morgan Bedfordshire","Allon White Sports Cars Ltd","119 High Street", "Cranfield", "MK43 0BS", "Bedford", "UK", "01234 750205"),
+                  array("Auto Europe","Morgan Detroit","Auto Europe","677 S Eton Street", "Birmingham", "MI 48009", "Detroit", "USA", "01234 750205"),
+                  array("Borghi","Morgan Milan","Borghi Automobili sas","Via Trezzo d‘Adda 14", "Via Stendhal 59", "20144", "Milano", "Itali", "+39 02 47 4051"),
+                  array("Classic and Sports","Morgan Vetlanda","Classic and Sports Car","Centre AB", "Maskingatan 21", "57433", "Vetlanda", "Sweden", "+46(0)383-10051"),
+                  array("Classic Cars HK","Morgan Kowloon","CLASSIC CARS HK LTD.","G/F, 90A SUNG WONG", "TOI ROAD", "", "KOWLOON", "HONG KONG", ""),
+                  array("Classic Line","Morgan Neckar","Classic Line","Mercedesstr. 1.", "", "74366 ", "Kirchheim / Neckar", "Germany", "0049 7143 405140") 
+                );
+  $countDealer= count($dealer)
+;  for ($row= 0; $row < $countDealer; $row++) {
+    $dealer0=$dealer[$row][0];
+    $dealer1=$dealer[$row][1];
+    $dealer2=$dealer[$row][2];
+    $dealer3=$dealer[$row][3];
+    $dealer4=$dealer[$row][4];
+    $dealer5=$dealer[$row][5];
+    $dealer6=$dealer[$row][6];
+    $dealer7=$dealer[$row][7];
+    $dealer8=$dealer[$row][8];
+   
+    $sqlDealer="INSERT INTO dealer(
+      Title,Team,Name,Address1,Address2,Postcode,State,Country,Tele) VALUES
+      ('$dealer0','$dealer1','$dealer2','$dealer3','$dealer4','$dealer5','$dealer6','$dealer7','$dealer8');";
 
-
+  if (mysqli_query($conn, $sqlDealer)) {
+    echo "Insert data Dealer successfully";
+  }
+  else {
+    echo "Error in Insert data Dealer: " . mysqli_error($conn);
+  }
+  }
 
     mysqli_close($conn);
 ?>

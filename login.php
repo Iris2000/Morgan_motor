@@ -105,7 +105,7 @@
                       "Username or Password is incorrect" +
                     '</div>');
                 } else if (data == "Successful") {
-                  window.location.replace("home.php");
+                  window.location.replace("MainPage.php");
                 } 
               });
         }

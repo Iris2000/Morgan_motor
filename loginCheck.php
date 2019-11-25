@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    $con = mysqli_connect("localhost", "root", "", "morgan_motor");
+    $con = mysqli_connect("localhost", "root", "", "search_engine");
     $error = '';
     
     if (!$con)
@@ -14,7 +14,7 @@
         $loginUsername = $_POST["username"];
         $loginPassword = $_POST["password"];
         
-        $sql = "SELECT * FROM `user_details` WHERE username = '$loginUsername' AND
+        $sql = "SELECT * FROM `user` WHERE username = '$loginUsername' AND
             passwd = '$loginPassword'";
         $result = mysqli_query($con, $sql) or die (mysql_error());
         $rows = mysqli_num_rows($result);

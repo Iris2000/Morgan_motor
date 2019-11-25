@@ -8,6 +8,18 @@
        die("Connection failed: " . mysqli_connect_error());
      }
 
+     //Create Table: user
+     $sqlUser="CREATE TABLE user (
+      username VARCHAR(255),
+      passwd VARCHAR(50)
+  );";
+    if (mysqli_query($conn, $sqlUser)) {
+      echo "TABLE: user created successfully";
+    }
+    else {
+      echo "Error creating TABLE: " . mysqli_error($conn);
+    }
+
      //Create Table: cars
      $sqlCars="CREATE TABLE cars (
        Cars_ID INT NOT NULL AUTO_INCREMENT,
@@ -52,6 +64,28 @@
      else {
        echo "Error creating TABLE: " . mysqli_error($conn);
      }
+
+     //Create Table: dealer
+     $sqlDealer="CREATE TABLE dealer(
+      Dealer_ID INT NOT NULL AUTO_INCREMENT,
+      Title VARCHAR(50),
+      Team VARCHAR(50),
+      Name VARCHAR(50),
+      Address1 VARCHAR(50),
+      Address2 VARCHAR(50),
+      Postcode VARCHAR(50),
+      State VARCHAR(50),
+      Country VARCHAR(50),
+      Tele VARCHAR(50),
+      PRIMARY KEY (Dealer_ID)
+    );";
+
+    if (mysqli_query($conn, $sqlDealer)) {
+      echo "TABLE: dealer created successfully";
+    }
+    else {
+      echo "Error creating TABLE: " . mysqli_error($conn);
+    }
 
      mysqli_close($conn);
    ?>
