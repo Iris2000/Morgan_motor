@@ -2,22 +2,43 @@
 <html lang="en">
 <style>
   .navi {
-    background-image: url('images/machine-macro-background-morgan-wallpaper-preview.jpg');
+    background-image: url('images/morgan2.jpg');
     background-size: cover;
     text-align: center;
     color: white;
     font-size: 30px;
-    padding-bottom: 10px;
   }
-  .center{
-    text-align: center;
+  .logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height:100px;
+    cursor: pointer;
+  }
+  button{
+    text-transform: uppercase;
+    font-family: 'Alegreya Sans SC';
+    position: absolute;
+  }
+  .bar{
+    background-color: black;
+    opacity: 0.8;
   }
 </style>
-  <form action="specs.php" method="post">
     <div class='navi'>
-      <a href="MainPage.php"><img src="images/morgan_logo.png" alt="Morgan_Motor_Logo" style=" display: block;margin-left: auto;margin-right: auto;height:100px; cursor: pointer;"></a>
+      <a href="MainPage.php"><img class='logo' src="images/Morgan.png" alt="Morgan_Motor_Logo"></a>
+      <br><br>
+      <div class="bar">
+        <br><br>
+      </div>
+      <button onclick="window.location.href = 'cars.php';"
+        style="background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 0px; font-size: 25px;">CARS
+      </button>
+      <button onclick="window.location.href = 'specs.php';"
+        style="background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 230px; font-size: 25px;">Specs
+      </button>
+      <button onclick="window.location.href = 'dealership.php';"
+        style="background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 440px; font-size: 25px;">dealer
+      </button>
     </div>
-    <br>
-    <br>
-  </form>
 </html>

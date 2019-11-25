@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<?php include 'header(new).php'; ?>
   <style>
     * {
       box-sizing:border-box;
@@ -8,6 +9,7 @@
 
     body {
       margin: 0;
+      line-height: 1;
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -72,7 +74,6 @@
     <title>Morgan Motor</title>
   </head>
   <body>
-    <?php include 'header(new).php'; ?>
       <!-- Plus 6-->
       <div class="container" style="background:#a60e0e;">
         <div class="row">
@@ -95,7 +96,7 @@
           </div>
           <div class="column-66">
             <h1 class="xlarge-font"><b>Morgan Roadster</b></h1>
-            <p><span style="font-size:24px">The Morgan V6 Roadster</span> is the most powerful and exhilarating model within Morgan’s Classic Range.</p>
+            <p><span style="font-size:36px">The Morgan V6 Roadster</span> is the most powerful and exhilarating model within Morgan’s Classic Range.</p>
             <button class="button" style="background-color:red">Read More</button>
           </div>
         </div>
@@ -123,7 +124,7 @@
           </div>
           <div class="column-66">
             <h1 class="xlarge-font"><b>Morgan 4/4</b></h1>
-            <p><span style="font-size:24px">A nimble and agile drivers’ car,</span> the Morgan 4/4 represents the purest Morgan driving experience available.</p>
+            <p><span style="font-size:36px">A nimble and agile drivers’ car,</span> the Morgan 4/4 represents the purest Morgan driving experience available.</p>
             <button class="button" style="background-color:red">Read More</button>
           </div>
         </div>
