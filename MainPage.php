@@ -77,6 +77,7 @@ session_start();
   <head>
     <title>Morgan Motor</title>
   </head>
+  <form action="detai.php" method="post">
   <body>
       <!-- Plus 6-->
       <div class="container" style="background:#a60e0e;">
@@ -84,7 +85,7 @@ session_start();
           <div class="column-66" >
             <img src="images\Plus6_logo.png" alt="Plus_SIX_logo" style="height: 100px;">
             <p><span style="font-size:36px">Addictive power,</span> unrivalled exhilaration and a true drivers’ sports car, the Plus Six is the next generation Morgan sports car.</p>
-            <button class="button">LEARN MORE..</button>
+            <button class="button" name="button" value="5">LEARN MORE..</button>
           </div>
           <div class="column-33">
               <img src="images\plus6.jpg" width="400" height="471">
@@ -101,7 +102,7 @@ session_start();
           <div class="column-66">
             <h1 class="xlarge-font"><b>Morgan Roadster</b></h1>
             <p><span style="font-size:36px">The Morgan V6 Roadster</span> is the most powerful and exhilarating model within Morgan’s Classic Range.</p>
-            <button class="button" style="background-color:red">Read More</button>
+            <button class="button" style="background-color:red" name="button" value="4">Read More</button>
           </div>
         </div>
       </div>
@@ -112,7 +113,7 @@ session_start();
           <div class="column-66" >
             <h1 class="xlarge-font" style="color: White;"><b>Morgan Plus 4</b></h1>
             <p><span style="font-size:36px">The Plus 4 represents</span> the sweet spot within Morgan’s range, and is by far the company’s most popular model.</p>
-            <button class="button">LEARN MORE..</button>
+            <button class="button" name="button" value="3">LEARN MORE..</button>
           </div>
           <div class="column-33">
               <img src="images\plus6.jpg" width="400" height="471">
@@ -129,7 +130,7 @@ session_start();
           <div class="column-66">
             <h1 class="xlarge-font"><b>Morgan 4/4</b></h1>
             <p><span style="font-size:36px">A nimble and agile drivers’ car,</span> the Morgan 4/4 represents the purest Morgan driving experience available.</p>
-            <button class="button" style="background-color:red">Read More</button>
+            <button class="button" style="background-color:red" name="button" value="2">Read More</button>
           </div>
         </div>
       </div>
@@ -140,7 +141,7 @@ session_start();
           <div class="column-66" >
             <h1 class="xlarge-font" style="color: White;"><b>Morgan 3 Wheel</b></h1>
             <p><span style="font-size:36px">Morgans most exciting model,</span> the 3 Wheeler is designed to bring the fun and excitement back into transport.</p>
-            <button class="button">LEARN MORE..</button>
+            <button class="button" name="button" value="1">LEARN MORE..</button>
           </div>
           <div class="column-33">
               <img src="images\3wheel.jpg" width="400" height="471">

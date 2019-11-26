@@ -41,7 +41,7 @@
   <?php
       //search for keyword
       if(isset($_POST['search-cars'])){
-          $keyword= $_POST['search'];
+          $keyword= $_POST['search-cars'];
           $search = mysqli_real_escape_string($conn, $keyword);
           $sql = "SELECT * FROM cars WHERE Name LIKE '%$search%' OR Powers LIKE '%$search%' OR Top_Speed LIKE '%$search%'
           OR kmh LIKE '%$search%' OR Combine_CO2 LIKE '%$search%' OR Description LIKE '%$search%'";//to add the row name of db
