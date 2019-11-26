@@ -3,7 +3,7 @@
  <link rel="stylesheet" href="css/dealership.css">
 
 <?php
-    include 'header(new).php';
+    include 'header.php';
     include 'DB.php';
 ?>
 <body>

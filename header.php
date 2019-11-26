@@ -7,9 +7,8 @@ session_start();
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  </head>
   </head>
 <style>
   .navi {
@@ -33,7 +32,7 @@ session_start();
     position: absolute;
   }
   .bar{
-    background-color: black;
+    background-color: #2F3133;
     opacity: 0.8;
   }
 
@@ -43,12 +42,13 @@ session_start();
     top:46px;
     font-size: 15px;
     margin: 10px;
+    width: -webkit-fill-available;
+    padding-top: 60px;
   }
 
   #logout {
     height: 30px;
-    display: inline-block;
-
+    float: right;
   }
 </style>
 <!-- check Login; -->
@@ -62,7 +62,7 @@ session_start();
     <div class='navi'>
       <a href="MainPage.php"><img class='logo' src="images/Morgan.png" alt="Morgan_Motor_Logo"></a>
       <div id="username">
-        <?php echo "Welcome, ".$_SESSION["username"]; ?><br><br>
+        <span style="font-family: georgia;"><?php echo "Welcome, ".$_SESSION["username"]; ?></span>
         <a href="logout.php"><img id="logout" src="images/logout.png" alt="Logout_Button"></a>
       </div>
       <br><br>

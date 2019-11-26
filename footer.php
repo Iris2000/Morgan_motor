@@ -9,7 +9,8 @@
    height: 90px;
    background-size: cover;
    width: 100%;
-   background-image: url('images/morgan2.jpg');
+   background-color: #2F3133;
+   /* background-image: url('images/morgan2.jpg'); */
    color: white;
 }
 </style>

@@ -1,17 +1,40 @@
-<!doctype html>
-<html lang="en">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 <?php
-    include 'header(new).php';
+    include 'header.php';
     include 'DB.php';
 ?>
 <style>
-    h2{
+    h2 {
       font-size: 40px;
       font-weight: 300;
       text-transform: uppercase;
-      font-family: cursive;
+      font-family: georgia;
       color: #ffffff;
+    }
+    .column {
+      opacity: 1;
+      display: block;
+      width: -webkit-fill-available;
+      height: auto;
+      transition: .5s ease;
+      backface-visibility: hidden;
+    }
+    .middle {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -300%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .column:hover .middle {
+      opacity: 1;
+    }
+    .learn-more {
+      font-size: 16px;
+      padding: 16px 32px;
     }
     h3{
       font-size: 15px;
@@ -30,11 +53,12 @@
       font-weight: normal;
       font-style: oblique;
       color: #ffffff;
+      padding-left: 10px;
     }
     body {
       margin: 0;
       line-height: 1;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: sans-serif, Helvetica;
     }
 </style>
 <body>
@@ -105,24 +129,8 @@
               <?php endif; ?>
 
               <?php if ($j%2==0): ?>
-                <div class="column" style="background-color:#704038; padding: 10px;">
-                  <img src="images\<?php echo $img ?>" style="float:right;width: 650px;">
-                  <h2><?php echo $result['Name'];?></h2>
-                  <h3>Power</h3>
-                  <p><?php echo $result['Powers']?></p>
-                  <h3>Top Speed</h3>
-                  <p><?php echo $result['Top_Speed']?></p>
-                  <h3>0 - 100 km/h (0 - 62 mph)</h3>
-                  <p><?php echo $result['kmh']?></p>
-                  <h3>Combined CO2</h3>
-                  <p><?php echo $result['Combine_CO2']?></p>
-                  <h4><?php echo $result['Description']?></h4>
-                </div>
-              <?php endif; ?>
-
-              <?php if ($j%2!=0): ?>
-                <div class="column" style="background-color:#232323; padding: 10px;">
-                    <img src="images\<?php echo $img ?>" style="float:right;width: 650px;">
+                <div class="column" style="background-color:#704038; padding: 10px; height: 400px;">
+                    <img src="images\<?php echo $img ?>" class="image" style="float:right;width: 650px;">
                     <h2><?php echo $result['Name'];?></h2>
                     <h3>Power</h3>
                     <p><?php echo $result['Powers']?></p>
@@ -133,9 +141,31 @@
                     <h3>Combined CO2</h3>
                     <p><?php echo $result['Combine_CO2']?></p>
                     <h4><?php echo $result['Description']?></h4>
+                    <div class="middle">
+                      <div class="learn-more btn btn-outline-light">LEARN MORE</div>
+                    </div>    
                 </div>
+                  
               <?php endif; ?>
 
+              <?php if ($j%2!=0): ?>
+                <div class="column" style="background-color:#232323; padding: 10px; height: 400px;">
+                    <img src="images\<?php echo $img ?>" class="image" style="float:right;width: 650px;">
+                    <h2><?php echo $result['Name'];?></h2>
+                    <h3>Power</h3>
+                    <p><?php echo $result['Powers']?></p>
+                    <h3>Top Speed</h3>
+                    <p><?php echo $result['Top_Speed']?></p>
+                    <h3>0 - 100 km/h (0 - 62 mph)</h3>
+                    <p><?php echo $result['kmh']?></p>
+                    <h3>Combined CO2</h3>
+                    <p><?php echo $result['Combine_CO2']?></p>
+                    <h4><?php echo $result['Description']?></h4>
+                    <div class="middle">
+                      <div class="learn-more btn btn-outline-warning">LEARN MORE</div>
+                    </div>   
+                </div>
+              <?php endif; ?>
               <br><br><br><br><br>
               <?php $j++;?>
         <?php endforeach; ?>
