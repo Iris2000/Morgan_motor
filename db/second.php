@@ -77,6 +77,8 @@
       State VARCHAR(50),
       Country VARCHAR(50),
       Tele VARCHAR(50),
+      Src VARCHAR(300),
+      Website   VARCHAR(200),
       PRIMARY KEY (Dealer_ID)
     );";
 
