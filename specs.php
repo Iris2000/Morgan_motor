@@ -107,11 +107,13 @@
     <div style="background-color: #fafafa;">
       <br><br>
       <p style="text-align: left; font-size: 20px; color: black;">RESULTS related with keyword '<?php echo $keyword ?>' : <?php echo $queryRows;?> </p>
-      <form action="specs.php" method="post" style="float: right; background-color: transparent;">
-        <input type="text" name="search" placeholder="<?php echo strtoupper($keyword) ?>" style="border-radius: 5px; width: 200px; height: 20px; top: 261px; right: 100px; position: absolute;">&nbsp
-        <button type="submit" name= "search-specs" value="Go" style="border-radius: 5px; height:25px; width: 80px; top: 261px; right: 5px; position: absolute;">Go ..</button>
-      </form>
+      <div class="col-xs-12" style="margin-bottom: 40px">
+        <form id="car_search" action="specs.php" method="post">
+          <input type="text" id="car_search_input" name="search_car" placeholder="<?php echo strtoupper($keyword) ?>">
+          <button id="search" class="btn rounded-0 search-btn" type="submit" name="search-specs">Search</button>
+        </form>
       </div>
+    </div>
       <br>
       <?php if ($queryRows>0): ?>
         <?php foreach ($results as $result): ?>
@@ -158,9 +160,9 @@
                       <p><?php echo $result['Performance']?></p>
                       <h3>Top Speed</h3>
                       <p><?php echo $result['TopSpeed']?></p>
-                      <h3>Combine MPG</h3><h2 style="float:right;"><?php echo $name.$type;?></h2>
+                      <h3>Combine MPG</h3>
                       <p><?php echo $result['CombinedMPG']?></p>
-                      <h3>Dry Weight</h3>
+                      <h3>Dry Weight</h3><h2 style="float:right;"><?php echo $name.$type;?></h2>
                       <p><?php echo $result['DryWeight']?></p>
                       <div class="middle">
                         <div class="learn-more btn btn-outline-light">LEARN MORE</div>
@@ -183,9 +185,9 @@
                       <p><?php echo $result['Performance']?></p>
                       <h3>Top Speed</h3>
                       <p><?php echo $result['TopSpeed']?></p>
-                      <h3>Combine MPG</h3><h2 style="float:right;"><?php echo $name.$type;?></h2>
+                      <h3>Combine MPG</h3>
                       <p><?php echo $result['CombinedMPG']?></p>
-                      <h3>Dry Weight</h3>
+                      <h3>Dry Weight</h3><h2 style="float:right;"><?php echo $name.$type;?></h2>
                       <p><?php echo $result['DryWeight']?></p>
                       <div class="middle">
                         <div class="learn-more btn btn-outline-warning">LEARN MORE</div>

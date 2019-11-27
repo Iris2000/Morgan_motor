@@ -60,12 +60,42 @@
       line-height: 1;
       font-family: sans-serif, Helvetica;
     }
+    #car_search_input {
+      background-color: #F4F4F4;
+      height: 30px;
+      font-family: "gill-sans-nova", Sans-serif;
+      width: 20%;
+      border: 0;
+      padding: 10px 20px;
+      float: right;
+      margin-right: 150px;
+      font-size: 12px;
+    }
+    #search {
+      background-color: #606060;
+      height: 30px;
+      font-family: "gill-sans-nova", Sans-serif;
+      width: 7%;
+      text-align: center;
+    }
+    .search-btn {
+      color: white;
+      display: flex;
+      right: 65px;
+      border: none;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    input[type=text]:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 5px black;
+    }
 </style>
 <body>
   <?php
       //search for keyword
-      if(isset($_POST['search-cars'])){
-          $keyword= $_POST['search-cars'];
+      if(isset($_POST['search-car'])){
+          $keyword= $_POST['search-car'];
           $search = mysqli_real_escape_string($conn, $keyword);
           $sql = "SELECT * FROM cars WHERE Name LIKE '%$search%' OR Powers LIKE '%$search%' OR Top_Speed LIKE '%$search%'
           OR kmh LIKE '%$search%' OR Combine_CO2 LIKE '%$search%' OR Description LIKE '%$search%'";//to add the row name of db
@@ -100,11 +130,13 @@
     <div style="background-color: #fafafa;">
       <br><br>
       <p style="text-align: left; font-size: 20px; color: black;">RESULTS related with keyword '<?php echo $keyword ?>' : <?php echo $queryRows;?> </p>
-      <form action="cars.php" method="post" style="float: right; background-color: transparent;">
-        <input type="text" name="search" placeholder="<?php echo strtoupper($keyword) ?>" style="border-radius: 5px; width: 200px; height: 20px; top: 261px; right: 100px; position: absolute;">&nbsp
-        <button type="submit" name= "search-cars" value="Go" style="border-radius: 5px; height:25px; width: 80px; top: 261px; right: 5px; position: absolute;">Go ..</button>
-      </form>
+      <div class="col-xs-12" style="margin-bottom: 40px">
+        <form id="car_search" action="cars.php" method="post">
+          <input type="text" id="car_search_input" name="search_car" placeholder="<?php echo strtoupper($keyword) ?>">
+          <button id="search" class="btn rounded-0 search-btn" type="submit" name="search-cars">Search</button>
+        </form>
       </div>
+    </div>
       <br>
       <?php if ($queryRows>0): ?>
         <?php foreach ($results as $result): ?>
