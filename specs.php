@@ -35,6 +35,8 @@
     .learn-more {
       font-size: 16px;
       padding: 16px 32px;
+      transform: translate(-50%, -400%);
+      width: 170px;
     }
     h3{
       font-size: 15px;
@@ -65,12 +67,42 @@
       float: left;
       width: 25%;
     }
+    #spec_search_input {
+      background-color: #F4F4F4;
+      height: 30px;
+      font-family: "gill-sans-nova", Sans-serif;
+      width: 20%;
+      border: 0;
+      padding: 10px 20px;
+      float: right;
+      margin-right: 150px;
+      font-size: 12px;
+    }
+    #search {
+      background-color: #606060;
+      height: 30px;
+      font-family: "gill-sans-nova", Sans-serif;
+      width: 7%;
+      text-align: center;
+    }
+    .search-btn {
+      color: white;
+      display: flex;
+      right: 65px;
+      border: none;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    input[type=text]:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 5px black;
+    }
 </style>
 <body>
   <?php
       //search for keyword
-      if(isset($_POST['search-specs'])){
-          $keyword= $_POST['search'];
+      if(isset($_POST['search-spec'])){
+          $keyword= $_POST['search-spec'];
           $search = mysqli_real_escape_string($conn, $keyword);
           $sql = "SELECT * FROM specs WHERE Type LIKE '%$search%' OR Cars_ID LIKE '%$search%' OR Engine LIKE '%$search%'
           OR Gearbox LIKE '%$search%' OR MaxPower LIKE '%$search%' OR MaxTorque LIKE '%$search%' OR Performance LIKE '%$search%'
@@ -108,8 +140,8 @@
       <br><br>
       <p style="text-align: left; font-size: 20px; color: black;">RESULTS related with keyword '<?php echo $keyword ?>' : <?php echo $queryRows;?> </p>
       <div class="col-xs-12" style="margin-bottom: 40px">
-        <form id="car_search" action="specs.php" method="post">
-          <input type="text" id="car_search_input" name="search_car" placeholder="<?php echo strtoupper($keyword) ?>">
+        <form id="spec_search" action="specs.php" method="post">
+          <input type="text" id="spec_search_input" name="search_spec" placeholder="<?php echo strtoupper($keyword) ?>">
           <button id="search" class="btn rounded-0 search-btn" type="submit" name="search-specs">Search</button>
         </form>
       </div>
@@ -145,56 +177,57 @@
                 }
 
               ?>
-              <?php if ($j%2==0): ?>
-                <div class="column" style="background-color:#704038; padding: 10px; height: 450px;">
-                    <img src="images\<?php echo $img ?>" class="image" style="float:right;width: 650px;">
-                      <h3>Engine</h3>
-                      <p><?php echo $result['Engine']?></p>
-                      <h3>Gearbox</h3>
-                      <p><?php echo $result['Gearbox']?></p>
-                      <h3>Max Power</h3>
-                      <p><?php echo $result['MaxPower']?></p>
-                      <h3>Max Torque</h3>
-                      <p><?php echo $result['MaxTorque']?></p>
-                      <h3>Performance</h3>
-                      <p><?php echo $result['Performance']?></p>
-                      <h3>Top Speed</h3>
-                      <p><?php echo $result['TopSpeed']?></p>
-                      <h3>Combine MPG</h3>
-                      <p><?php echo $result['CombinedMPG']?></p>
-                      <h3>Dry Weight</h3><h2 style="float:right;"><?php echo $name.$type;?></h2>
-                      <p><?php echo $result['DryWeight']?></p>
-                      <div class="middle">
-                        <div class="learn-more btn btn-outline-light">LEARN MORE</div>
-                      </div>   
-                </div>
-              <?php endif; ?>
+              <form action="detail.php" method="post">
+                <?php if ($j%2==0): ?>
+                  <div class="column" style="background-color:#704038; padding: 10px; height: 450px;">
+                      <img src="images\<?php echo $img ?>" class="image" style="float:right;width: 650px;">
+                        <h3>Engine</h3>
+                        <p><?php echo $result['Engine']?></p>
+                        <h3>Gearbox</h3>
+                        <p><?php echo $result['Gearbox']?></p>
+                        <h3>Max Power</h3>
+                        <p><?php echo $result['MaxPower']?></p>
+                        <h3>Max Torque</h3>
+                        <p><?php echo $result['MaxTorque']?></p>
+                        <h3>Performance</h3>
+                        <p><?php echo $result['Performance']?></p>
+                        <h3>Top Speed</h3>
+                        <p><?php echo $result['TopSpeed']?></p>
+                        <h3>Combine MPG</h3>
+                        <p><?php echo $result['CombinedMPG']?></p>
+                        <h3>Dry Weight</h3><h2 style="float:right;"><?php echo $name.$type;?></h2>
+                        <p><?php echo $result['DryWeight']?></p>
+                        <div class="middle">
+                          <button value="<?php echo $result['Cars_ID'] ?>" name="button" class="learn-more btn btn-outline-light">LEARN MORE</button>
+                        </div>   
+                  </div>
+                <?php endif; ?>
 
-              <?php if ($j%2!=0): ?>
-                <div class="column" style="background-color:#232323; padding: 10px; height: 450px;">
-                    <img src="images\<?php echo $img ?>" class="image" style="float:right;width: 650px;">
-                      <h3>Engine</h3>
-                      <p><?php echo $result['Engine']?></p>
-                      <h3>Gearbox</h3>
-                      <p><?php echo $result['Gearbox']?></p>
-                      <h3>Max Power</h3>
-                      <p><?php echo $result['MaxPower']?></p>
-                      <h3>Max Torque</h3>
-                      <p><?php echo $result['MaxTorque']?></p>
-                      <h3>Performance</h3>
-                      <p><?php echo $result['Performance']?></p>
-                      <h3>Top Speed</h3>
-                      <p><?php echo $result['TopSpeed']?></p>
-                      <h3>Combine MPG</h3>
-                      <p><?php echo $result['CombinedMPG']?></p>
-                      <h3>Dry Weight</h3><h2 style="float:right;"><?php echo $name.$type;?></h2>
-                      <p><?php echo $result['DryWeight']?></p>
-                      <div class="middle">
-                        <div class="learn-more btn btn-outline-warning">LEARN MORE</div>
-                      </div>   
-                </div>
-              <?php endif; ?>
-
+                <?php if ($j%2!=0): ?>
+                  <div class="column" style="background-color:#232323; padding: 10px; height: 450px;">
+                      <img src="images\<?php echo $img ?>" class="image" style="float:right;width: 650px;">
+                        <h3>Engine</h3>
+                        <p><?php echo $result['Engine']?></p>
+                        <h3>Gearbox</h3>
+                        <p><?php echo $result['Gearbox']?></p>
+                        <h3>Max Power</h3>
+                        <p><?php echo $result['MaxPower']?></p>
+                        <h3>Max Torque</h3>
+                        <p><?php echo $result['MaxTorque']?></p>
+                        <h3>Performance</h3>
+                        <p><?php echo $result['Performance']?></p>
+                        <h3>Top Speed</h3>
+                        <p><?php echo $result['TopSpeed']?></p>
+                        <h3>Combine MPG</h3>
+                        <p><?php echo $result['CombinedMPG']?></p>
+                        <h3>Dry Weight</h3><h2 style="float:right;"><?php echo $name.$type;?></h2>
+                        <p><?php echo $result['DryWeight']?></p>
+                        <div class="middle">
+                          <button value="<?php echo $result['Cars_ID'] ?>" name="button" class="learn-more btn btn-outline-warning">LEARN MORE</button>
+                        </div>   
+                  </div>
+                <?php endif; ?>
+              </form>
               <br><br><br><br><br>
               <?php $j++;?>
         <?php endforeach; ?>

@@ -35,6 +35,8 @@
     .learn-more {
       font-size: 16px;
       padding: 16px 32px;
+      transform: translate(-50%, -250%);
+      width: 170px;
     }
     h3{
       font-size: 15px;
@@ -160,44 +162,46 @@
                 <?php $img="plus6.jpg"; ?>
               <?php endif; ?>
 
-              <?php if ($j%2==0): ?>
-                <div class="column" style="background-color:#704038; padding: 10px; height: 400px;">
-                    <img src="images\<?php echo $img ?>" class="image" style="float:right;width: 650px;">
-                    <h2><?php echo $result['Name'];?></h2>
-                    <h3>Power</h3>
-                    <p><?php echo $result['Powers']?></p>
-                    <h3>Top Speed</h3>
-                    <p><?php echo $result['Top_Speed']?></p>
-                    <h3>0 - 100 km/h (0 - 62 mph)</h3>
-                    <p><?php echo $result['kmh']?></p>
-                    <h3>Combined CO2</h3>
-                    <p><?php echo $result['Combine_CO2']?></p>
-                    <h4><?php echo $result['Description']?></h4>
-                    <div class="middle">
-                      <div class="learn-more btn btn-outline-light">LEARN MORE</div>
-                    </div>    
-                </div>
-                  
-              <?php endif; ?>
+              <form action="detail.php" method="post">
+                <?php if ($j%2==0): ?>
+                  <div class="column" style="background-color:#704038; padding: 10px; height: 400px;">
+                      <img src="images\<?php echo $img ?>" class="image" style="float:right;width: 650px;">
+                      <h2><?php echo $result['Name'];?></h2>
+                      <h3>Power</h3>
+                      <p><?php echo $result['Powers']?></p>
+                      <h3>Top Speed</h3>
+                      <p><?php echo $result['Top_Speed']?></p>
+                      <h3>0 - 100 km/h (0 - 62 mph)</h3>
+                      <p><?php echo $result['kmh']?></p>
+                      <h3>Combined CO2</h3>
+                      <p><?php echo $result['Combine_CO2']?></p>
+                      <h4><?php echo $result['Description']?></h4>
+                      <div class="middle">
+                        <button value="<?php echo $result['Cars_ID'] ?>" name="button" class="learn-more btn btn-outline-light">LEARN MORE</button>
+                      </div>    
+                  </div>
+                    
+                <?php endif; ?>
 
-              <?php if ($j%2!=0): ?>
-                <div class="column" style="background-color:#232323; padding: 10px; height: 400px;">
-                    <img src="images\<?php echo $img ?>" class="image" style="float:right;width: 650px;">
-                    <h2><?php echo $result['Name'];?></h2>
-                    <h3>Power</h3>
-                    <p><?php echo $result['Powers']?></p>
-                    <h3>Top Speed</h3>
-                    <p><?php echo $result['Top_Speed']?></p>
-                    <h3>0 - 100 km/h (0 - 62 mph)</h3>
-                    <p><?php echo $result['kmh']?></p>
-                    <h3>Combined CO2</h3>
-                    <p><?php echo $result['Combine_CO2']?></p>
-                    <h4><?php echo $result['Description']?></h4>
-                    <div class="middle">
-                      <div class="learn-more btn btn-outline-warning">LEARN MORE</div>
-                    </div>   
-                </div>
-              <?php endif; ?>
+                <?php if ($j%2!=0): ?>
+                  <div class="column" style="background-color:#232323; padding: 10px; height: 400px;">
+                      <img src="images\<?php echo $img ?>" class="image" style="float:right;width: 650px;">
+                      <h2><?php echo $result['Name'];?></h2>
+                      <h3>Power</h3>
+                      <p><?php echo $result['Powers']?></p>
+                      <h3>Top Speed</h3>
+                      <p><?php echo $result['Top_Speed']?></p>
+                      <h3>0 - 100 km/h (0 - 62 mph)</h3>
+                      <p><?php echo $result['kmh']?></p>
+                      <h3>Combined CO2</h3>
+                      <p><?php echo $result['Combine_CO2']?></p>
+                      <h4><?php echo $result['Description']?></h4>
+                      <div class="middle">
+                        <button value="<?php echo $result['Cars_ID'] ?>" name="button" class="learn-more btn btn-outline-warning">LEARN MORE</button>
+                      </div>   
+                  </div>
+                <?php endif; ?>
+              </form>
               <br><br><br><br><br>
               <?php $j++;?>
         <?php endforeach; ?>
