@@ -1,9 +1,8 @@
 <?php
-    include 'header(new).php';
+    session_start();
+    include 'header.php';
     include 'DB.php';
-?>
-<?php
-    $detail = $_POST['button'];
+    $detail = $_POST["button"];
     if($detail == '5'){
         $sqlA = "SELECT * FROM cars WHERE (Cars_ID=5)";//table name
         $resultA = mysqli_query($conn, $sqlA);

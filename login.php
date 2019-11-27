@@ -14,6 +14,11 @@
 
     <title>Morgan Motor</title>
   </head>
+  <style>
+  #home_bg {
+    background-image: url(images/machine-macro-background-morgan-wallpaper-preview.jpg);
+  }
+  </style>
   <body>
 
   <section id="home_bg" class="min-vh-100">

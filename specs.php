@@ -65,12 +65,42 @@
       float: left;
       width: 25%;
     }
+    #spec_search_input {
+      background-color: #F4F4F4;
+      height: 30px;
+      font-family: "gill-sans-nova", Sans-serif;
+      width: 20%;
+      border: 0;
+      padding: 10px 20px;
+      float: right;
+      margin-right: 150px;
+      font-size: 12px;
+    }
+    #search {
+      background-color: #606060;
+      height: 30px;
+      font-family: "gill-sans-nova", Sans-serif;
+      width: 7%;
+      text-align: center;
+    }
+    .search-btn {
+      color: white;
+      display: flex;
+      right: 65px;
+      border: none;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    input[type=text]:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 5px black;
+    }
 </style>
 <body>
   <?php
       //search for keyword
-      if(isset($_POST['search-specs'])){
-          $keyword= $_POST['search'];
+      if(isset($_POST['search-spec'])){
+          $keyword= $_POST['search-spec'];
           $search = mysqli_real_escape_string($conn, $keyword);
           $sql = "SELECT * FROM specs WHERE Type LIKE '%$search%' OR Cars_ID LIKE '%$search%' OR Engine LIKE '%$search%'
           OR Gearbox LIKE '%$search%' OR MaxPower LIKE '%$search%' OR MaxTorque LIKE '%$search%' OR Performance LIKE '%$search%'
@@ -108,8 +138,8 @@
       <br><br>
       <p style="text-align: left; font-size: 20px; color: black;">RESULTS related with keyword '<?php echo $keyword ?>' : <?php echo $queryRows;?> </p>
       <div class="col-xs-12" style="margin-bottom: 40px">
-        <form id="car_search" action="specs.php" method="post">
-          <input type="text" id="car_search_input" name="search_car" placeholder="<?php echo strtoupper($keyword) ?>">
+        <form id="spec_search" action="specs.php" method="post">
+          <input type="text" id="spec_search_input" name="search_spec" placeholder="<?php echo strtoupper($keyword) ?>">
           <button id="search" class="btn rounded-0 search-btn" type="submit" name="search-specs">Search</button>
         </form>
       </div>
