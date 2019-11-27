@@ -59,39 +59,16 @@
       margin: 0;
       line-height: 1;
       font-family: sans-serif, Helvetica;
+      background-color: #232323;
     }
-    #car_search_input {
-      background-color: #F4F4F4;
-      height: 30px;
-      font-family: "gill-sans-nova", Sans-serif;
-      width: 20%;
-      border: 0;
-      padding: 10px 20px;
-      float: right;
-      margin-right: 150px;
-      font-size: 12px;
+    .coverpicture{
+      float:right;
+      width: 50%;
     }
-    #search {
-      background-color: #606060;
-      height: 30px;
-      font-family: "gill-sans-nova", Sans-serif;
-      width: 7%;
-      text-align: center;
-    }
-    .search-btn {
-      color: white;
-      display: flex;
-      right: 65px;
-      border: none;
-      cursor: pointer;
-      font-size: 12px;
-    }
-    input[type=text]:focus, textarea:focus {
-      outline: none;
-      box-shadow: 0 0 5px black;
-    }
-    img{
-      text-align:right;
+    .specs{
+      background-color: #a60e0e;
+      float:left;
+      width:50%;
     }
 </style>
 <body>
@@ -123,13 +100,46 @@
                 $resBs[$counterB]=$rowB;
                 $counterB++;
             }
-
         }
-          print_r ($resAs);
-          echo "<br><br>";
-          print_r ($resBs);
         ?>
-        <img src="images/plus6.jpg">
+        <img src="images/Plus6_logo.png" style="float: left; margin-bottom: 30px; padding: 30px;">
+        <img class="coverpicture" src="images/plus6.jpg">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h3>Power</h3>
+        <p><?php echo $resAs['Powers']?></p>
+        <h3>Top Speed</h3>
+        <p><?php echo $resAs['Top_Speed']?></p>
+        <h3>0 - 100 km/h (0 - 62 mph)</h3>
+        <p><?php echo $resAs['kmh']?></p>
+        <h3>Combined CO2</h3>
+        <p><?php echo $resAs['Combine_CO2']?></p>
+        <h4><?php echo $resAs['Description']?></h4>
+        <br><br><br>
+
+          <?php foreach ($resBs as $resB): ?>
+
+            <div class="specs">
+            <p style="font-size:30px;"><?php echo $resB['Type']?></p>
+            <h3>Engine</h3>
+            <p><?php echo $resB['Engine']?></p>
+            <h3>Gearbox</h3>
+            <p><?php echo $resB['Gearbox']?></p>
+            <h3>Max Power</h3>
+            <p><?php echo $resB['MaxPower']?></p>
+            <h3>Max Torque</h3>
+            <p><?php echo $resB['MaxTorque']?></p>
+            <h3>Performance</h3>
+            <p><?php echo $resB['Performance']?></p>
+            <h3>Top Speed</h3>
+            <p><?php echo $resB['TopSpeed']?></p>
+            <h3>Combine MPG</h3>
+            <p><?php echo $resB['CombinedMPG']?></p>
+            <h3>Dry Weight</h3>
+            <p><?php echo $resB['DryWeight']?></p>
+            </div>
+          <?php endforeach; ?>
+
+
       <?php endif; ?>
 
 
