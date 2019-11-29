@@ -42,7 +42,7 @@
      //Create Table: specs
      $sqlSpecs="CREATE TABLE specs(
        Specs_ID INT NOT NULL AUTO_INCREMENT,
-       Type VARCHAR(20),
+       Type VARCHAR(100),
        Cars_ID INT,
        Engine VARCHAR(50),
        Gearbox VARCHAR(50),
@@ -52,9 +52,9 @@
        TopSpeed VARCHAR(50),
        CombinedMPG VARCHAR(50),
        DryWeight VARCHAR(50),
-       ListPrice DECIMAL,
-       VAT DECIMAL,
-       ListPriceIncVAT DECIMAL,
+       ListPrice DECIMAL(8,2),
+       VAT DECIMAL(8,2),
+       ListPriceIncVAT DECIMAL(8,2),
        PRIMARY KEY (Specs_ID),
        FOREIGN KEY (Cars_ID) REFERENCES cars(Cars_ID)
      );";

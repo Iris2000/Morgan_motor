@@ -111,7 +111,7 @@ session_start();
       <div class="container" style="background:#a60e0e;">
         <div class="row">
           <div class="column-66" >
-            <h1 class="xlarge-font" style="color: White;"><b>Morgan Plus 4</b></h1>
+            <img src="https://www.morgan-motor.com/wp-content/uploads/2019/05/44logo-white.png" style="height: 100px;">
             <p><span style="font-size:36px">The Plus 4 represents</span> the sweet spot within Morgan’s range, and is by far the company’s most popular model.</p>
             <button class="button" name="button" value="3">LEARN MORE..</button>
           </div>
@@ -139,7 +139,7 @@ session_start();
       <div class="container" style="background:#a60e0e;">
         <div class="row">
           <div class="column-66" >
-            <h1 class="xlarge-font" style="color: White;"><b>Morgan 3 Wheel</b></h1>
+            <img src="https://www.morgan-motor.com/wp-content/uploads/2019/04/3wlogo.png" style="height: 100px;">
             <p><span style="font-size:36px">Morgans most exciting model,</span> the 3 Wheeler is designed to bring the fun and excitement back into transport.</p>
             <button class="button" name="button" value="1">LEARN MORE..</button>
           </div>
