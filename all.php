@@ -108,8 +108,8 @@
 <body>
   <?php
       //search for keyword in cars
-      if(isset($_POST['search_car'])){
-          $keyword= $_POST['search_car'];
+      if(isset($_POST['search'])){
+          $keyword= $_POST['search'];
           $search = mysqli_real_escape_string($conn, $keyword);
           $sql = "SELECT * FROM cars WHERE Name LIKE '%$search%' OR Powers LIKE '%$search%' OR Top_Speed LIKE '%$search%'
           OR kmh LIKE '%$search%' OR Combine_CO2 LIKE '%$search%' OR Description LIKE '%$search%'";//to add the row name of db
@@ -218,8 +218,8 @@
 
 <?php
     //search for keyword in specs
-    if(isset($_POST['search_spec'])){
-        $keyword= $_POST['search_spec'];
+    if(isset($_POST['search'])){
+        $keyword= $_POST['search'];
         $search = mysqli_real_escape_string($conn, $keyword);
         $sql = "SELECT * FROM specs WHERE Type LIKE '%$search%' OR Cars_ID LIKE '%$search%' OR Engine LIKE '%$search%'
         OR Gearbox LIKE '%$search%' OR MaxPower LIKE '%$search%' OR MaxTorque LIKE '%$search%' OR Performance LIKE '%$search%'
@@ -351,8 +351,8 @@
 
 <!-- search dealer-->
 <?php
-    if(empty($_POST['search-dealer']) == false){
-      $keyword= $_POST['search-dealer'];
+    if(empty($_POST['search']) == false){
+      $keyword= $_POST['search'];
       $search = mysqli_real_escape_string($conn, $keyword);
       $sql = "SELECT * FROM dealer WHERE Title LIKE '%$search%' OR Team LIKE '%$search%' OR Name LIKE '%$search%'
       OR Address1 LIKE '%$search%' OR Address2 LIKE '%$search%' OR Postcode LIKE '%$search%' OR State LIKE '%$search%'
