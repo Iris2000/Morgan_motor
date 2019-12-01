@@ -77,8 +77,8 @@ session_start();
   <head>
     <title>Morgan Motor</title>
   </head>
-  <form action="detail.php" method="post">
   <body>
+  <form action="detail.php" method="post">
       <!-- Plus 6-->
       <div class="container" style="background:#a60e0e;">
         <div class="row">
@@ -149,8 +149,8 @@ session_start();
         </div>
       </div>
 
-    </form>
-  </body>
+</form>
+</body>
 </html>
 </body>
 </html>
