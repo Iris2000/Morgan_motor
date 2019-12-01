@@ -34,6 +34,7 @@ session_start();
   .bar{
     background-color: #2F3133;
     opacity: 0.8;
+    margin-top: -46px;
   }
 
   #username {
@@ -41,7 +42,9 @@ session_start();
     position:absolute;
     top:46px;
     font-size: 15px;
-    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -25px;
     width: -webkit-fill-available;
     padding-top: 60px;
   }
@@ -70,16 +73,16 @@ session_start();
         <br><br>
       </div>
       <button onclick="window.location.href = 'MainPage.php';"
-        style="background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 0px; font-size: 25px;">HOME
+        style="cursor: pointer; margin-top: -46px; background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 0px; font-size: 25px;">HOME
       </button>
       <button onclick="window.location.href = 'cars.php';"
-        style="background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 230px; font-size: 25px;">CARS
+        style="cursor: pointer; margin-top: -46px; background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 230px; font-size: 25px;">CARS
       </button>
       <button onclick="window.location.href = 'specs.php';"
-        style="background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 460px; font-size: 25px;">Specs
+        style="cursor: pointer; margin-top: -46px; background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 460px; font-size: 25px;">Specs
       </button>
       <button onclick="window.location.href = 'dealership.php';"
-        style="background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 690px; font-size: 25px;">dealer
+        style="cursor: pointer; margin-top: -46px; background-color: transparent; top: 165px; color: white; height: 50px; width: 120px; left: 690px; font-size: 25px;">dealer
       </button>
     </div>
 </html>

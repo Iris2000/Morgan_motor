@@ -101,8 +101,8 @@
 <body>
   <?php
       //search for keyword
-      if(isset($_POST['search-spec'])){
-          $keyword= $_POST['search-spec'];
+      if(isset($_POST['search_spec'])){
+          $keyword= $_POST['search_spec'];
           $search = mysqli_real_escape_string($conn, $keyword);
           $sql = "SELECT * FROM specs WHERE Type LIKE '%$search%' OR Cars_ID LIKE '%$search%' OR Engine LIKE '%$search%'
           OR Gearbox LIKE '%$search%' OR MaxPower LIKE '%$search%' OR MaxTorque LIKE '%$search%' OR Performance LIKE '%$search%'
@@ -199,7 +199,7 @@
                         <p><?php echo $result['DryWeight']?></p>
                         <div class="middle">
                           <button value="<?php echo $result['Cars_ID'] ?>" name="button" class="learn-more btn btn-outline-light">LEARN MORE</button>
-                        </div>   
+                        </div>
                   </div>
                 <?php endif; ?>
 
@@ -224,7 +224,7 @@
                         <p><?php echo $result['DryWeight']?></p>
                         <div class="middle">
                           <button value="<?php echo $result['Cars_ID'] ?>" name="button" class="learn-more btn btn-outline-warning">LEARN MORE</button>
-                        </div>   
+                        </div>
                   </div>
                 <?php endif; ?>
               </form>

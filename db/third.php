@@ -32,15 +32,15 @@
   }
   }
 
-  $Specs= array( array("EURO 3","1","S&S 1979cc V twin","Mazda 5 Speed","82 bhp @ 5250rpm","140Nm @ 3250rpm","6 seconds","115mph (185kph)","30.3 mpg (9.3 litres / 100km)","215g / km","525kg","32905","6581","39486"),
-                array("EURO 4","1","S&S 1979cc V twin","Mazda 5 Speed","68 bhp @ 5200rpm","129Nm @ 2500rpm","7 seconds","115mph (185kph)","34.9 mpg (8.1 litres / 100km)","187g / km","585kg","33395","6679","40074"),
-                array("","2","Ford Sigma 1600cc","Mazda 5 Speed","82 kw (110 bhp) @ 6000 rpm","131 Nm (97 lb/ft)","8.0 seconds","117mph (188kph)","44.1 mpg (6.4 litres / 100km)","143g / km","795kg","33505","6701","40206"),
-                array("","3","Ford GDI 1999cc","Mazda 5 Speed manual","115 kw (154 bhp) @ 6000 rpm","201 Nm (148 lb/ft)","7.5 seconds","118 mph (189 kph)","39.8 mpg (7.1 litres / 100km)","205g / km","927kg","36755","7351","44109"),
-                array("","4","Ford Cyclone V6 3700cc","Ford 6 Speed Manual","209 kw (280 bhp) @ 6000rpm","380Nm (280lb/ft)","5.5 seconds","140mph (225kph)","27.4 mpg (10.3 litres / 100km)","250g / km","950kg","45895","9179","55074"),
-                array("Morgan Plus Six","5","BMW 2019 B58 TwinPower Turbo inline 6-cylinder engine","8-speed Automatic with Sport, Plus and Manual shift modes","250kw (335 bhp) @ 6,500rpm","500Nm (369 lb/ft)","4.2 seconds","166mph (267 kph)","34 mpg (8.2 l/100km)","180g/km","1,075kg","64995.83","12999.17","77995"),
-                array("Morgan Plus Six Touring","5","BMW 2019 B58 TwinPower Turbo inline 6-cylinder engine","8-speed Automatic with Sport, Plus and Manual shift modes","250kw (335 bhp) @ 6,500rpm","500Nm (369 lb/ft)","4.2 seconds","166mph (267 kph)","34 mpg (8.2 l/100km)","180g/km","1,075kg","70829.17","14165.83","84995"),
-                array("Morgan Plus Six First Edition - Moonstone","5","BMW 2019 B58 TwinPower Turbo inline 6-cylinder engine","8-speed Automatic with Sport, Plus and Manual shift modes","250kw (335 bhp) @ 6,500rpm","500Nm (369 lb/ft)","4.2 seconds","166mph (267 kph)","34 mpg (8.2 l/100km)","180g/km","1,075kg","74995","15000","89995"),
-                array("Morgan Plus Six First Edition - Emerald","5","BMW 2019 B58 TwinPower Turbo inline 6-cylinder engine","8-speed Automatic with Sport, Plus and Manual shift modes","250kw (335 bhp) @ 6,500rpm","500Nm (369 lb/ft)","4.2 seconds","166mph (267 kph)","34 mpg (8.2 l/100km)","180g/km","1,075kg","74995","15000","89995"));
+  $Specs= array( array("EURO 3","1","S&S 1979cc V twin","Mazda 5 Speed","82 bhp @ 5250rpm","140Nm @ 3250rpm","6 seconds","115mph (185kph)","30.3 mpg (9.3 litres / 100km)","525kg","32905","6581","39486"),
+                array("EURO 4","1","S&S 1979cc V twin","Mazda 5 Speed","68 bhp @ 5200rpm","129Nm @ 2500rpm","7 seconds","115mph (185kph)","34.9 mpg (8.1 litres / 100km)","585kg","33395","6679","40074"),
+                array("","2","Ford Sigma 1600cc","Mazda 5 Speed","82 kw (110 bhp) @ 6000 rpm","131 Nm (97 lb/ft)","8.0 seconds","117mph (188kph)","44.1 mpg (6.4 litres / 100km)","795kg","33505","6701","40206"),
+                array("","3","Ford GDI 1999cc","Mazda 5 Speed manual","115 kw (154 bhp) @ 6000 rpm","201 Nm (148 lb/ft)","7.5 seconds","118 mph (189 kph)","39.8 mpg (7.1 litres / 100km)","927kg","36755","7351","44109"),
+                array("","4","Ford Cyclone V6 3700cc","Ford 6 Speed Manual","209 kw (280 bhp) @ 6000rpm","380Nm (280lb/ft)","5.5 seconds","140mph (225kph)","27.4 mpg (10.3 litres / 100km)","950kg","45895","9179","55074"),
+                array("Morgan Plus Six","5","BMW 2019 B58 TwinPower Turbo inline 6-cylinder engine","8-speed Automatic with Sport, Plus and Manual shift modes","250kw (335 bhp) @ 6,500rpm","500Nm (369 lb/ft)","4.2 seconds","166mph (267 kph)","34 mpg (8.2 l/100km)","1,075kg","64995.83","12999.17","77995"),
+                array("Morgan Plus Six Touring","5","BMW 2019 B58 TwinPower Turbo inline 6-cylinder engine","8-speed Automatic with Sport, Plus and Manual shift modes","250kw (335 bhp) @ 6,500rpm","500Nm (369 lb/ft)","4.2 seconds","166mph (267 kph)","34 mpg (8.2 l/100km)","1,075kg","70829.17","14165.83","84995"),
+                array("Morgan Plus Six First Edition - Moonstone","5","BMW 2019 B58 TwinPower Turbo inline 6-cylinder engine","8-speed Automatic with Sport, Plus and Manual shift modes","250kw (335 bhp) @ 6,500rpm","500Nm (369 lb/ft)","4.2 seconds","166mph (267 kph)","34 mpg (8.2 l/100km)","1,075kg","74995","15000","89995"),
+                array("Morgan Plus Six First Edition - Emerald","5","BMW 2019 B58 TwinPower Turbo inline 6-cylinder engine","8-speed Automatic with Sport, Plus and Manual shift modes","250kw (335 bhp) @ 6,500rpm","500Nm (369 lb/ft)","4.2 seconds","166mph (267 kph)","34 mpg (8.2 l/100km)","1,075kg","74995","15000","89995"));
   $countSpecs= count($Specs);
   for ($row= 0; $row < $countSpecs; $row++) {
     $Spec0=$Specs[$row][0];
@@ -78,7 +78,7 @@
                   array("Borghi","Morgan Milan","Borghi Automobili sas","Via Trezzo d‘Adda 14", "Via Stendhal 59", "20144", "Milano", "Itali", "+39 02 47 4051", "images/itali.png", "https://www.morgan-motor.com/borghi-milan/"),
                   array("Classic and Sports","Morgan Vetlanda","Classic and Sports Car","Centre AB", "Maskingatan 21", "57433", "Vetlanda", "Sweden", "+46(0)383-10051", "images/sweden.png", "https://www.morgan-motor.com/classicandsports-vetlanda/"),
                   array("Classic Cars HK","Morgan Kowloon","CLASSIC CARS HK LTD.","G/F, 90A SUNG WONG", "TOI ROAD", "", "KOWLOON", "HONG KONG", "", "images/hongkong.png", "https://www.morgan-motor.com/classic-cars-hk/"),
-                  array("Classic Line","Morgan Neckar","Classic Line","Mercedesstr. 1.", "", "74366 ", "Kirchheim / Neckar", "Germany", "0049 7143 405140", "images/germany.png", "https://www.morgan-motor.com/classic-line/") 
+                  array("Classic Line","Morgan Neckar","Classic Line","Mercedesstr. 1.", "", "74366 ", "Kirchheim / Neckar", "Germany", "0049 7143 405140", "images/germany.png", "https://www.morgan-motor.com/classic-line/")
                 );
   $countDealer= count($dealer)
 ;  for ($row= 0; $row < $countDealer; $row++) {
@@ -93,7 +93,7 @@
     $dealer8=$dealer[$row][8];
     $dealer9=$dealer[$row][9];
     $dealer10=$dealer[$row][10];
-   
+
     $sqlDealer="INSERT INTO dealer(
       Title,Team,Name,Address1,Address2,Postcode,State,Country,Tele,Src,Website) VALUES
       ('$dealer0','$dealer1','$dealer2','$dealer3','$dealer4','$dealer5','$dealer6','$dealer7','$dealer8','$dealer9','$dealer10');";

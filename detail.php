@@ -59,39 +59,22 @@
       margin: 0;
       line-height: 1;
       font-family: sans-serif, Helvetica;
+      background-color: #232323;
     }
-    #car_search_input {
-      background-color: #F4F4F4;
-      height: 30px;
-      font-family: "gill-sans-nova", Sans-serif;
-      width: 20%;
-      border: 0;
-      padding: 10px 20px;
-      float: right;
-      margin-right: 150px;
-      font-size: 12px;
+    .coverpicture{
+      float:right;
+      width: 50%;
     }
-    #search {
-      background-color: #606060;
-      height: 30px;
-      font-family: "gill-sans-nova", Sans-serif;
-      width: 7%;
-      text-align: center;
+    .specs{
+      background-color: #a60e0e;
     }
-    .search-btn {
-      color: white;
-      display: flex;
-      right: 65px;
-      border: none;
-      cursor: pointer;
-      font-size: 12px;
+    table {
+      border-radius: 1em;
+      overflow: hidden;
     }
-    input[type=text]:focus, textarea:focus {
-      outline: none;
-      box-shadow: 0 0 5px black;
-    }
-    img{
-      text-align:right;
+
+    th, td {
+      padding: 1em;
     }
 </style>
 <body>
@@ -123,13 +106,67 @@
                 $resBs[$counterB]=$rowB;
                 $counterB++;
             }
-
         }
-          print_r ($resAs);
-          echo "<br><br>";
-          print_r ($resBs);
         ?>
-        <img src="images/plus6.jpg">
+        <img src="images/Plus6_logo.png" style="float: left; margin-bottom: 30px; padding: 30px;">
+        <img class="coverpicture" src="images/plus6.jpg">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h3>Power</h3>
+        <p><?php echo $resAs['Powers']?></p>
+        <h3>Top Speed</h3>
+        <p><?php echo $resAs['Top_Speed']?></p>
+        <h3>0 - 100 km/h (0 - 62 mph)</h3>
+        <p><?php echo $resAs['kmh']?></p>
+        <h3>Combined CO2</h3>
+        <p><?php echo $resAs['Combine_CO2']?></p>
+        <h4><?php echo $resAs['Description']?></h4>
+        <br><br><br>
+
+            <div class="table-responsive">
+              <table class="table" align="center" style="width: 1500px; text-align: center; margin-top: 30px; margin-bottom: 30px; text-transform: uppercase;">
+                <thead style="font-family: 'Nunito Sans'; font-weight: 300; background-color: black; color: #8b4513;">
+                  <tr>
+                    <th>Type</th>
+                    <th>Engine</th>
+                    <th>Gearbox</th>
+                    <th>Max Power</th>
+                    <th>Max Torque</th>
+                    <th>Performance</th>
+                    <th>Top Speed</th>
+                    <th>Combine MPG</th>
+                    <th>Dry Weight</th>
+                    <th>List Price</th>
+                    <th>VAT</th>
+                    <th>List Price Inc VAT</th>
+                  </tr>
+                </thead>
+                <?php $row=1; ?>
+                <?php foreach ($resBs as $resB): ?>
+                  <?php if ($row%2==0): ?>
+                    <tbody style="background-color: #bbbbbb; color: #182928; font-family: 'gill-sans-nova', 'sans-serif'; font-weight: 300; letter-spacing: 0.04em;">
+                  <?php endif; ?>
+                <?php if ($row%2!=0): ?>
+                  <tbody style="background-color: #fdfbf7; color: #182928;font-family: 'gill-sans-nova', 'sans-serif'; font-weight: 300; letter-spacing: 0.04em;">
+                <?php endif; ?>
+                  <tr>
+                    <td><?php echo $resB['Type']?></td>
+                    <td><?php echo $resB['Engine']?></td>
+                    <td><?php echo $resB['Gearbox']?></td>
+                    <td><?php echo $resB['MaxPower']?></td>
+                    <td><?php echo $resB['MaxTorque']?></td>
+                    <td><?php echo $resB['Performance']?></td>
+                    <td><?php echo $resB['TopSpeed']?></td>
+                    <td><?php echo $resB['CombinedMPG']?></td>
+                    <td><?php echo $resB['DryWeight']?></td>
+                    <td><?php echo $resB['ListPrice'] ?></td>
+                    <td><?php echo $resB['VAT'] ?></td>
+                    <td><?php echo $resB['ListPriceIncVAT'] ?></td>
+                  </tr>
+                </tbody>
+                <?php $row++; ?>
+                <?php endforeach; ?>
+              </table>
+            </div>
       <?php endif; ?>
 
 
@@ -165,6 +202,65 @@
         echo "<br><br>";
         print_r ($resBs);
         ?>
+
+        <img src="https://www.morgan-motor.com/wp-content/uploads/2019/05/roadsterlogo-white.png" style="float: left; margin-bottom: 30px; padding: 30px;">
+        <img class="coverpicture" src="images/roadster.jpg">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h3>Power</h3>
+        <p><?php echo $resAs['Powers']?></p>
+        <h3>Top Speed</h3>
+        <p><?php echo $resAs['Top_Speed']?></p>
+        <h3>0 - 100 km/h (0 - 62 mph)</h3>
+        <p><?php echo $resAs['kmh']?></p>
+        <h3>Combined CO2</h3>
+        <p><?php echo $resAs['Combine_CO2']?></p>
+        <h4><?php echo $resAs['Description']?></h4>
+        <br><br><br>
+
+            <div class="table-responsive">
+              <table class="table" align="center" style="width: 1500px; text-align: center; margin-top: 30px; margin-bottom: 30px; text-transform: uppercase;">
+                <thead style="font-family: 'Nunito Sans'; font-weight: 300; background-color: black; color: #8b4513;">
+                  <tr>
+                    <th>Engine</th>
+                    <th>Gearbox</th>
+                    <th>Max Power</th>
+                    <th>Max Torque</th>
+                    <th>Performance</th>
+                    <th>Top Speed</th>
+                    <th>Combine MPG</th>
+                    <th>Dry Weight</th>
+                    <th>List Price</th>
+                    <th>VAT</th>
+                    <th>List Price Inc VAT</th>
+                  </tr>
+                 </thead>
+                <?php $row=1; ?>
+                <?php foreach ($resBs as $resB): ?>
+                  <?php if ($row%2==0): ?>
+                    <tbody style="background-color: #bbbbbb; color: #182928; font-family: 'gill-sans-nova', 'sans-serif'; font-weight: 300; letter-spacing: 0.04em;">
+                  <?php endif; ?>
+                <?php if ($row%2!=0): ?>
+                  <tbody style="background-color: #fdfbf7; color: #182928;font-family: 'gill-sans-nova', 'sans-serif'; font-weight: 300; letter-spacing: 0.04em;">
+                <?php endif; ?>
+                  <tr>
+                    <td><?php echo $resB['Engine']?></td>
+                    <td><?php echo $resB['Gearbox']?></td>
+                    <td><?php echo $resB['MaxPower']?></td>
+                    <td><?php echo $resB['MaxTorque']?></td>
+                    <td><?php echo $resB['Performance']?></td>
+                    <td><?php echo $resB['TopSpeed']?></td>
+                    <td><?php echo $resB['CombinedMPG']?></td>
+                    <td><?php echo $resB['DryWeight']?></td>
+                    <td><?php echo $resB['ListPrice'] ?></td>
+                    <td><?php echo $resB['VAT'] ?></td>
+                    <td><?php echo $resB['ListPriceIncVAT'] ?></td>
+                  </tr>
+                </tbody>
+
+                <?php $row++; ?>
+                <?php endforeach; ?>
+              </table>
+            </div>
       <?php endif; ?>
 
 
@@ -201,6 +297,64 @@
             echo "<br><br>";
             print_r ($resBs);
             ?>
+            <img src="https://www.morgan-motor.com/wp-content/uploads/2019/05/44logo-white.png" style="float: left; margin-bottom: 30px; padding: 30px;">
+            <img class="coverpicture" src="images/plus4.jpg">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h3>Power</h3>
+            <p><?php echo $resAs['Powers']?></p>
+            <h3>Top Speed</h3>
+            <p><?php echo $resAs['Top_Speed']?></p>
+            <h3>0 - 100 km/h (0 - 62 mph)</h3>
+            <p><?php echo $resAs['kmh']?></p>
+            <h3>Combined CO2</h3>
+            <p><?php echo $resAs['Combine_CO2']?></p>
+            <h4><?php echo $resAs['Description']?></h4>
+            <br><br><br>
+
+                <div class="table-responsive">
+                  <table class="table" align="center" style="width: 1500px; text-align: center; margin-top: 30px; margin-bottom: 30px; text-transform: uppercase;">
+                    <thead style="font-family: 'Nunito Sans'; font-weight: 300; background-color: black; color: #8b4513;">
+                      <tr>
+                        <th>Engine</th>
+                        <th>Gearbox</th>
+                        <th>Max Power</th>
+                        <th>Max Torque</th>
+                        <th>Performance</th>
+                        <th>Top Speed</th>
+                        <th>Combine MPG</th>
+                        <th>Dry Weight</th>
+                        <th>List Price</th>
+                        <th>VAT</th>
+                        <th>List Price Inc VAT</th>
+                      </tr>
+                     </thead>
+                    <?php $row=1; ?>
+                    <?php foreach ($resBs as $resB): ?>
+                      <?php if ($row%2==0): ?>
+                        <tbody style="background-color: #bbbbbb; color: #182928; font-family: 'gill-sans-nova', 'sans-serif'; font-weight: 300; letter-spacing: 0.04em;">
+                      <?php endif; ?>
+                    <?php if ($row%2!=0): ?>
+                      <tbody style="background-color: #fdfbf7; color: #182928;font-family: 'gill-sans-nova', 'sans-serif'; font-weight: 300; letter-spacing: 0.04em;">
+                    <?php endif; ?>
+                      <tr>
+                        <td><?php echo $resB['Engine']?></td>
+                        <td><?php echo $resB['Gearbox']?></td>
+                        <td><?php echo $resB['MaxPower']?></td>
+                        <td><?php echo $resB['MaxTorque']?></td>
+                        <td><?php echo $resB['Performance']?></td>
+                        <td><?php echo $resB['TopSpeed']?></td>
+                        <td><?php echo $resB['CombinedMPG']?></td>
+                        <td><?php echo $resB['DryWeight']?></td>
+                        <td><?php echo $resB['ListPrice'] ?></td>
+                        <td><?php echo $resB['VAT'] ?></td>
+                        <td><?php echo $resB['ListPriceIncVAT'] ?></td>
+                      </tr>
+                    </tbody>
+
+                   <?php $row++; ?>
+                    <?php endforeach; ?>
+                  </table>
+                </div>
       <?php endif; ?>
 
       <?php if ($detail== '2'): ?>
@@ -235,6 +389,64 @@
         echo "<br><br>";
         print_r ($resBs);
         ?>
+        <img src="https://www.morgan-motor.com/wp-content/uploads/2019/04/44logo.png" style="float: left; margin-bottom: 30px; padding: 30px;">
+        <img class="coverpicture" src="images/44.jpg">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h3>Power</h3>
+        <p><?php echo $resAs['Powers']?></p>
+        <h3>Top Speed</h3>
+        <p><?php echo $resAs['Top_Speed']?></p>
+        <h3>0 - 100 km/h (0 - 62 mph)</h3>
+        <p><?php echo $resAs['kmh']?></p>
+        <h3>Combined CO2</h3>
+        <p><?php echo $resAs['Combine_CO2']?></p>
+        <h4><?php echo $resAs['Description']?></h4>
+        <br><br><br>
+
+            <div class="table-responsive">
+              <table class="table" align="center" style="width: 1500px; text-align: center; margin-top: 30px; margin-bottom: 30px; text-transform: uppercase;">
+                <thead style="font-family: 'Nunito Sans'; font-weight: 300; background-color: black; color: #8b4513;">
+                  <tr>
+                    <th>Engine</th>
+                    <th>Gearbox</th>
+                    <th>Max Power</th>
+                    <th>Max Torque</th>
+                    <th>Performance</th>
+                    <th>Top Speed</th>
+                    <th>Combine MPG</th>
+                    <th>Dry Weight</th>
+                    <th>List Price</th>
+                    <th>VAT</th>
+                    <th>List Price Inc VAT</th>
+                  </tr>
+                </thead>
+                <?php $row=1; ?>
+                <?php foreach ($resBs as $resB): ?>
+                  <?php if ($row%2==0): ?>
+                    <tbody style="background-color: #bbbbbb; color: #182928; font-family: 'gill-sans-nova', 'sans-serif'; font-weight: 300; letter-spacing: 0.04em;">
+                  <?php endif; ?>
+                <?php if ($row%2!=0): ?>
+                  <tbody style="background-color: #fdfbf7; color: #182928;font-family: 'gill-sans-nova', 'sans-serif'; font-weight: 300; letter-spacing: 0.04em;">
+                <?php endif; ?>
+                  <tr>
+                    <td><?php echo $resB['Engine']?></td>
+                    <td><?php echo $resB['Gearbox']?></td>
+                    <td><?php echo $resB['MaxPower']?></td>
+                    <td><?php echo $resB['MaxTorque']?></td>
+                    <td><?php echo $resB['Performance']?></td>
+                    <td><?php echo $resB['TopSpeed']?></td>
+                    <td><?php echo $resB['CombinedMPG']?></td>
+                    <td><?php echo $resB['DryWeight']?></td>
+                    <td><?php echo $resB['ListPrice'] ?></td>
+                    <td><?php echo $resB['VAT'] ?></td>
+                    <td><?php echo $resB['ListPriceIncVAT'] ?></td>
+                  </tr>
+                </tbody>
+
+                <?php $row++; ?>
+                <?php endforeach; ?>
+              </table>
+            </div>
       <?php endif; ?>
       <?php if ($detail == '1'): ?>
         <?php
@@ -269,6 +481,65 @@
             echo "<br><br>";
             print_r ($resBs);
             ?>
+            <img src="https://www.morgan-motor.com/wp-content/uploads/2019/04/3wlogo.png" style="float: left; margin-bottom: 30px; padding: 30px;">
+            <img class="coverpicture" src="images/3wheel.jpg">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h3>Power</h3>
+            <p><?php echo $resAs['Powers']?></p>
+            <h3>Top Speed</h3>
+            <p><?php echo $resAs['Top_Speed']?></p>
+            <h3>0 - 100 km/h (0 - 62 mph)</h3>
+            <p><?php echo $resAs['kmh']?></p>
+            <h3>Combined CO2</h3>
+            <p><?php echo $resAs['Combine_CO2']?></p>
+            <h4><?php echo $resAs['Description']?></h4>
+            <br><br><br>
+
+                <div class="table-responsive">
+                  <table class="table" align="center" style="width: 1500px; text-align: center; margin-top: 30px; margin-bottom: 30px; text-transform: uppercase;">
+                    <thead style="font-family: 'Nunito Sans'; font-weight: 300; background-color: black; color: #8b4513;">
+                      <tr>
+                        <th>Type</th>
+                        <th>Engine</th>
+                        <th>Gearbox</th>
+                        <th>Max Power</th>
+                        <th>Max Torque</th>
+                        <th>Performance</th>
+                        <th>Top Speed</th>
+                        <th>Combine MPG</th>
+                        <th>Dry Weight</th>
+                        <th>List Price</th>
+                        <th>VAT</th>
+                        <th>List Price Inc VAT</th>
+                      </tr>
+                    </thead>
+                    <?php $row=1; ?>
+                    <?php foreach ($resBs as $resB): ?>
+                      <?php if ($row%2==0): ?>
+                        <tbody style="background-color: #bbbbbb; color: #182928; font-family: 'gill-sans-nova', 'sans-serif'; font-weight: 300; letter-spacing: 0.04em;">
+                      <?php endif; ?>
+                    <?php if ($row%2!=0): ?>
+                      <tbody style="background-color: #fdfbf7; color: #182928;font-family: 'gill-sans-nova', 'sans-serif'; font-weight: 300; letter-spacing: 0.04em;">
+                    <?php endif; ?>
+                      <tr>
+                        <td><?php echo $resB['Type']?></td>
+                        <td><?php echo $resB['Engine']?></td>
+                        <td><?php echo $resB['Gearbox']?></td>
+                        <td><?php echo $resB['MaxPower']?></td>
+                        <td><?php echo $resB['MaxTorque']?></td>
+                        <td><?php echo $resB['Performance']?></td>
+                        <td><?php echo $resB['TopSpeed']?></td>
+                        <td><?php echo $resB['CombinedMPG']?></td>
+                        <td><?php echo $resB['DryWeight']?></td>
+                        <td><?php echo $resB['ListPrice'] ?></td>
+                        <td><?php echo $resB['VAT'] ?></td>
+                        <td><?php echo $resB['ListPriceIncVAT'] ?></td>
+                      </tr>
+                    </tbody>
+                    <?php $row++; ?>
+                    <?php endforeach; ?>
+                  </table>
+                </div>
       <?php endif; ?>
 
 </body>
